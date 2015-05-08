@@ -13,18 +13,37 @@ confControllers.controller('BeneficiarioController', function ($scope,$location,
 
 	}
 
-	$scope.registrar=function(){
 
-	$http.post("beneficiario/registrar",$scope.beneficiarioVO).success(function(data, status, headers, config) {
+	$scope.guardar=function(){
 
-	 	if (data=='Success') {
-	 		alert(data);  
-	 		$scope.nuevo();
-	 	}else{
-	 		alert('error');   
-	 	}
-	 	
-      });
+		if ($scope.beneficiarioVO.id > 0) {
+
+			$http.post("beneficiario/actualizar",$scope.beneficiarioVO).success(function(data, status, headers, config) {
+
+		 	if (data=='Success') {
+		 		alert('Actualizado con exito');  
+		 		$state.go('home.consultar_beneficiario');
+		 		//$scope.nuevo();
+		 	}else{
+		 		alert('error');   
+		 	}
+		 	
+	      });
+
+		}else{
+
+			$http.post("beneficiario/registrar",$scope.beneficiarioVO).success(function(data, status, headers, config) {
+
+		 	if (data=='Success') {
+		 		alert(data);  
+		 		$scope.nuevo();
+		 	}else{
+		 		alert('error');   
+		 	}
+		 	
+	      });
+
+		}
 
 	}
 

@@ -41,7 +41,7 @@
 
                  <div class="panel-body">
                                 <div class="row"><!--INICIO FILA-->
-                                    <button class="btn btn-primary " type="button" id="btnCrearConductor" ng-click='registrar()'>Registrar</button>
+                                    <button class="btn btn-primary " type="button" id="btnCrearConductor" ng-click='guardar()'>{{ beneficiarioVO.id > 0 ? 'Actualizar' : 'Registrar'  }}</button>
                                 </div><!--FINAL FILA-->
                         </div>             
              </div>
