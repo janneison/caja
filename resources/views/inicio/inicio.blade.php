@@ -331,4 +331,33 @@
             </div>
           </div>
 		</div>
+  <div class="row">
+      <div class="col-lg-3">
+      <div class="panel panel-info">
+        <div class="panel-heading" style="cursor:pointer" ui-sref="home.beneficiario">
+          <div class="row">
+            <div class="col-xs-6">
+              <i class="fa fa-users fa-5x"></i>
+            </div>
+        <div class="col-xs-6 text-right">
+          Beneficiarios
+        </div>
+    </div>
+</div>
+<a ui-sref="home.beneficiario">
+  <div class="panel-footer announcement-bottom">
+    <div class="row">
+      <div class="col-xs-6">
+        Ingresar
+      </div>
+      <div class="col-xs-6 text-right">
+        <i class="fa fa-arrow-circle-right"></i>
+      </div>
+    </div>
+    </div>
+</a>
+</div>
+</div>
+  </div>
+
 	

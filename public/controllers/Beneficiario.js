@@ -3,6 +3,16 @@ confControllers.controller('BeneficiarioController', function ($scope,$location,
 	$scope.beneficiarioVO={id:'',nombre:'nombre', identificacion:'', direccion:'', telefono:'',_token:authUsuario.token()};
 	$scope.ListaBeneficiario=[];
 
+	if ($state.params.id > 0) {
+
+		$http.get("beneficiario/consultarporcodigo/"+$state.params.id).success(function(data, status, headers, config) {
+
+	 	$scope.beneficiarioVO=data;
+	 	
+      });
+
+	}
+
 	$scope.registrar=function(){
 
 	$http.post("beneficiario/registrar",$scope.beneficiarioVO).success(function(data, status, headers, config) {

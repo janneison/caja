@@ -76,6 +76,7 @@ Route::post('menu/consultarmenu', 'MenuController@ConsultarMenu');
 /*Beneficiario*/
 Route::post('beneficiario/registrar','BeneficiarioController@Registrar');
 Route::post('beneficiario/consultar', 'BeneficiarioController@Consultar');
+Route::get('beneficiario/consultarporcodigo/{id}','BeneficiarioController@ConsultarPorCodigo');
 /*Fin beneficiario*/
 
 /*Legalizaciones*/

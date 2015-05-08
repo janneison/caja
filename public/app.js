@@ -32,6 +32,11 @@ App.config(function($urlRouterProvider, $stateProvider) {
       templateUrl: "beneficiario/beneficiario", 
       controller: 'BeneficiarioController'
      })
+     .state('home.editar_beneficiario', {
+      url: "/editar-beneficiario/:id",              
+      templateUrl: "beneficiario/beneficiario", 
+      controller: 'BeneficiarioController'
+     })
     .state('home.periodo', {
       url: "/periodo",              
       templateUrl: "periodo/periodo", 

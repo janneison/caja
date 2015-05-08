@@ -26,6 +26,7 @@
                        <th>Identificacion</th>
                        <th>Direccion</th>
                        <th>Telefono</th>
+                       <th>Opciones</th>
                    </tr>
                     </thead>
                     <tbody>
@@ -35,6 +36,7 @@
                             <td>{{item.identificacion}}</td>
                             <td>{{item.direccion}}</td>
                             <td>{{item.telefono}}</td>
+                            <td><a ui-sref='home.editar_beneficiario({id:item.id})'><i class='fa fa-pencil fa-2x'></i></a>  </td>
                         </tr>
                     </tbody>
                 </table>
