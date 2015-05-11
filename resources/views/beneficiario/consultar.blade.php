@@ -30,7 +30,7 @@
                    </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat='item in ListaBeneficiario'>
+                        <tr ng-repeat='item in ListaBeneficiario.data'>
                             <td>{{item.id}}</td>
                             <td>{{item.nombre}}</td>
                             <td>{{item.identificacion}}</td>
@@ -40,7 +40,32 @@
                         </tr>
                     </tbody>
                 </table>
-          
+                <div class="dataTables_paginate paging_simple_numbers col-lg-6">
+              <ul class="pagination">
+              <li style='cursor:pointer;' tabindex="0" aria-controls="dataTables-example" class="paginate_button previous " id="dataTables-example_previous">
+                <a ng-click='consultar(1)'>Inicio</a>
+              </li>
+              <li ng-if='!(ListaBeneficiario.current_page==1)'
+              style='cursor:pointer;' tabindex="0" aria-controls="dataTables-example" class="paginate_button previous " id="dataTables-example_previous">
+                <a ng-click='consultar(ListaBeneficiario.current_page - 1)'>Anterior</a>
+              </li> 
+              
+             
+              <li ng-class='(ListaBeneficiario.current_page==n) ? "active" : ""' style='cursor:pointer;' ng-repeat='n in crearArray(ListaBeneficiario.last_page)'>
+                <a 
+                ng-click='consultar(n)'>{{n}}</a>
+              </li>
+              
+              <li ng-if='!(ListaBeneficiario.current_page==ListaBeneficiario.last_page)'
+              style='cursor:pointer;' tabindex="0" aria-controls="dataTables-example" class="paginate_button previous " id="dataTables-example_previous">
+                <a ng-click='consultar(ListaBeneficiario.current_page + 1)'>Siguiente</a>
+              </li> 
+              <li style='cursor:pointer;' tabindex="0" aria-controls="dataTables-example" class="paginate_button previous " id="dataTables-example_previous">
+                <a ng-click='consultar(ListaBeneficiario.last_page)'>Fin</a>
+               </li>
+               
+              </ul>
+              </div>
          </div>
     </div>
 </div>

@@ -13,7 +13,6 @@ confControllers.controller('BeneficiarioController', function ($scope,$location,
 
 	}
 
-
 	$scope.guardar=function(){
 
 		if ($scope.beneficiarioVO.id > 0) {
@@ -47,9 +46,9 @@ confControllers.controller('BeneficiarioController', function ($scope,$location,
 
 	}
 
-	$scope.consultar=function(){
-
-	$http.post("beneficiario/consultar",{_token:authUsuario.token()}).success(function(data, status, headers, config) {
+	$scope.consultar=function(pagina){
+		if(pagina===undefined){pagina= 0};
+	$http.post("beneficiario/consultar?page="+pagina,{_token:authUsuario.token()}).success(function(data, status, headers, config) {
 
 	 	$scope.ListaBeneficiario=data;
 	 	
@@ -66,6 +65,14 @@ confControllers.controller('BeneficiarioController', function ($scope,$location,
 		$scope.beneficiarioVO.telefono='';
 		$scope.beneficiarioVO._token=authUsuario.token();
 
+	}
+
+	$scope.crearArray = function(num){
+		var array = [];
+		for (var i = 0; i < num; i++) {
+			array.push(i+1);
+		};
+		return array;
 	}
 
 });

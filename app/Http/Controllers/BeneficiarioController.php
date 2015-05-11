@@ -33,18 +33,17 @@ class BeneficiarioController extends Controller {
 
 	    $beneficiario->identificacion= $request->input('identificacion');
 	    $beneficiario->telefono= $request->input('telefono');
-	    $beneficiario->direccion= $request->input('id_responsable');
+	    $beneficiario->direccion= $request->input('direccion');
 	    $beneficiario->nombre= $request->input('nombre');
 	    $rs=$beneficiario->save();
 	    
 	    return $rs > 0 ? 'Success' : 'Error';
-
 	}
 	/**
 	 * [Consultar devuelve todos los beneficiarios]
 	 */
 	public function Consultar(){
-		return Beneficiario::all();
+		return Beneficiario::paginate(2);
 	}
 	/**
 	 * [ConsultarPorCodigo devuelve los datos de un beneficiario]
