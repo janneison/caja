@@ -30,7 +30,6 @@ Route::get('beneficiario/consultar', function(){
 });
 Route::get('anticipo/anticipo', function(){
 	$lista=Funcionario::all();	
-	$bancos=Banco::all();
 	return view('anticipo/registrar',array('funcionarios'=>$lista,'bancos'=>$bancos));
 });
 Route::get('periodo/periodo', function(){
@@ -92,15 +91,11 @@ Route::post('legalizaciones/actualizar','LegalizacionesController@Actualizar');
 Route::get('posts-json', 'PersonaController@json');
 
 Route::get('test',function(){
-
 	return view('test');
-
 });
 
 use App\models\Persona;
 Route::post('test2',function(){
-
 	return Persona::paginate(5);
-
 });
 
